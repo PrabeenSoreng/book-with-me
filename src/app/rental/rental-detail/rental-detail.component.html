@@ -15,8 +15,7 @@
                 <img src="{{rental.image}}" alt="">
             </div>
             <div class="col-md-6">
-                <!-- Will be replaced with map !!!! -->
-                <img src="{{rental.image}}" alt="">
+                <app-map [location]="(rental.city | ucwords) + ', ' + (rental.street | ucwords)"></app-map>
             </div>
         </div>
     </div>
