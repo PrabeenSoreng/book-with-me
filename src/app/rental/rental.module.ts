@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { NgPipesModule } from 'ngx-pipes';
 
+import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalComponent } from './rental.component';
 import { RentalService } from './shared/rental.service';
-import { Routes, RouterModule } from '@angular/router';
-import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 
 const routes: Routes = [
     {
@@ -28,6 +30,8 @@ const routes: Routes = [
     ],
     imports: [
         CommonModule,
+        NgPipesModule,
+        HttpClientModule,
         RouterModule.forChild(routes)
     ],
     providers: [
