@@ -1,15 +1,20 @@
 const express = require('express');
 const Rental = require('../models/rental');
+const userController = require('../controllers/users');
 
 const router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/secret', userController.authMiddleware, (req, res) => {
+    res.json({ "secret": true });
+});
+
+router.get('/', (req, res) => {
     Rental.find({}, (err, foundRentals) => {
         res.json(foundRentals);
     });
 });
 
-router.get('/:id', function(req, res) {
+router.get('/:id', (req, res) => {
     const rentalId = req.params.id;
     Rental.findById(rentalId, (err, foundRental) => {
         if (err) {
