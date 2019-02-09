@@ -21,7 +21,7 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true })
         app.listen(PORT, () => {
             console.log('Connection successful');
             const fakeDb = new FakeDb();
-            fakeDb.seeDb();
+            // fakeDb.seeDb();
         });
     })
     .catch(err => console.log(err));
