@@ -13,6 +13,9 @@ import { RentalService } from './shared/rental.service';
 import { AuthGuard } from '../auth/shared/auth.guard';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+import { HelperService } from '../common/service/helper.service';
+import { FormsModule } from '@angular/forms';
+import { BookingService } from '../booking/shared/booking.service';
 
 const routes: Routes = [
     {
@@ -35,6 +38,7 @@ const routes: Routes = [
     ],
     imports: [
         CommonModule,
+        FormsModule,
         NgPipesModule,
         HttpClientModule,
         RouterModule.forChild(routes),
@@ -42,7 +46,9 @@ const routes: Routes = [
         Daterangepicker
     ],
     providers: [
-        RentalService
+        RentalService,
+        HelperService,
+        BookingService
     ]
 })
 export class RentalModule {}

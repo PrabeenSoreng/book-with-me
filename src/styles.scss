@@ -76,3 +76,21 @@ p {
         letter-spacing: 1px;
     }
 }
+
+#toast-container>div {
+    opacity: 1;
+}
+
+.daterangepicker {
+    td {
+        &.in-range {
+            background-color: #ffa9a9;
+        }
+        &:active {
+            background-color: $main-color !important;
+            &:hover {
+                background-color: $main-color !important;
+            }
+        }
+    }
+}
