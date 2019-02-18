@@ -8,6 +8,7 @@ import { BookingService } from 'src/app/booking/shared/booking.service';
 import { HelperService } from 'src/app/common/service/helper.service';
 
 import { Rental } from '../../shared/rental.model';
+import { AuthService } from 'src/app/auth/shared/auth.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -38,6 +39,7 @@ export class RentalDetailBookingComponent implements OnInit {
   constructor(
     private helperService: HelperService,
     private bookingService: BookingService,
+    public auth: AuthService,
     private toastr: ToastrService,
     private modalService: NgbModal) { }
 

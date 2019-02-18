@@ -16,4 +16,12 @@ export class RentalService {
     getRentals() {
         return this.http.get('/api/v1/rentals');
     }
+
+    getRentalsByCity(city: string) {
+        return this.http.get(`/api/v1/rentals?city=${city}`);
+    }
+
+    createRental(rental: Rental) {
+        return this.http.post('/api/v1/rentals', rental);
+    }
 }

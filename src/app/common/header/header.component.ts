@@ -16,6 +16,10 @@ export class HeaderComponent {
     //this.isAuthenticated = this.authService.isAuthenticated();
   }
 
+  search(city: string) {
+    city ? this.router.navigate([`/rentals/${city}/homes`]) : this.router.navigate(['/rentals']);
+  }
+
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
