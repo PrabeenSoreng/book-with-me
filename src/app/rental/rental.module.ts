@@ -16,6 +16,8 @@ import { RentalDetailBookingComponent } from './rental-detail/rental-detail-book
 import { HelperService } from '../common/service/helper.service';
 import { FormsModule } from '@angular/forms';
 import { BookingService } from '../booking/shared/booking.service';
+import { RentalSearchComponent } from './rental-search/rental-search.component';
+import { RentalCreateComponent } from './rental-create/rental-create.component';
 
 const routes: Routes = [
     {
@@ -23,7 +25,9 @@ const routes: Routes = [
         component: RentalComponent,
         children: [
             {path: '', component: RentalListComponent},
-            {path: ':rentalId', component: RentalDetailComponent, canActivate: [AuthGuard]}
+            {path: 'new', component: RentalCreateComponent, canActivate: [AuthGuard]},
+            {path: ':rentalId', component: RentalDetailComponent},
+            {path: ':city/homes', component: RentalSearchComponent}
         ]
     }
 ];
@@ -34,7 +38,9 @@ const routes: Routes = [
         RentalListComponent,
         RentalListItemComponent,
         RentalDetailComponent,
-        RentalDetailBookingComponent
+        RentalDetailBookingComponent,
+        RentalSearchComponent,
+        RentalCreateComponent
     ],
     imports: [
         CommonModule,
