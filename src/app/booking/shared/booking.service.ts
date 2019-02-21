@@ -8,7 +8,11 @@ export class BookingService {
     
     constructor(private http: HttpClient) {}
 
-    public createBooking(booking: Booking) {
+    createBooking(booking: Booking) {
         return this.http.post('/api/v1/bookings', booking);
+    }
+
+    getUserBookings() {
+        return this.http.get('api/v1/bookings/manage');
     }
 }

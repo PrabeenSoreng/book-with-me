@@ -29,6 +29,20 @@ p {
     cursor: pointer;
 }
 
+.btn-ghost {
+    margin: 1px;
+    background-color: transparent;
+    color: $main-color;
+    border: 1px solid $main-color;
+    font-size: 12px;
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: $main-color;
+        border: 1px solid $main-color;
+    }
+}
+
 .btn-bwm {
     background-color: $main-color;
     border-color: $main-color;
