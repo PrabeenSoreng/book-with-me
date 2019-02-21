@@ -77,11 +77,11 @@ router.delete("/:id", userController.authMiddleware, (req, res) => {
         .exec((err, foundRental) => {
             if (err) return res.status(422).send({ errors: normalizeErrors(err.errors) });
             if (user.id !== foundRental.user.id)
-                return res.send({
+                return res.status(422).send({
                     errors: [{ title: 'Invalid User!', details: 'You are not rental owner!' }]
                 });
             if (foundRental.bookings.length > 0)
-                return res.send({
+                return res.status(422).send({
                     errors: [{ title: 'Active Bookings!', details: 'Cannot delete rental with active bookings!' }]
                 });
             foundRental.remove((err) => {

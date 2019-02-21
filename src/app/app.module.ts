@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { AuthGuard } from './auth/shared/auth.guard';
+import { AuthService } from './auth/shared/auth.service';
 import { HeaderComponent } from './common/header/header.component';
 import { RentalModule } from './rental/rental.module';
-import { AuthService } from './auth/shared/auth.service';
-import { AuthGuard } from './auth/shared/auth.guard';
-import { from } from 'rxjs';
+import { ManageModule } from './manage/manage.module';
 
 const routes: Routes = [
   {path: '', redirectTo: '/rentals', pathMatch: 'full'}
@@ -28,6 +28,7 @@ const routes: Routes = [
     NgbModule.forRoot(),
     ToastrModule.forRoot(),
     RentalModule,
+    ManageModule,
     AuthModule,
     RouterModule.forRoot(routes)
   ],
