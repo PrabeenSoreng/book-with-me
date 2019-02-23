@@ -28,6 +28,7 @@ export class MapComponent implements OnInit {
         this.ref.detectChanges();
       }, () => {
         this.isPositionError = true;
-      })
+        this.ref.detectChanges();
+      });
   }
 }
